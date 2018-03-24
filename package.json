@@ -1,0 +1,20 @@
+{
+  "name": "chat.io",
+  "version": "1.0.0",
+  "description": "practice chat app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkparadox/chat.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pkparadox/chat.io/issues"
+  },
+  "homepage": "https://github.com/pkparadox/chat.io#readme"
+}
