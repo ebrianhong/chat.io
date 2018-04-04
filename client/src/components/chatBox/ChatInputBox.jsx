@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class ChatInputBox extends React.Component {
   constructor(props) {
@@ -8,10 +8,7 @@ class ChatInputBox extends React.Component {
   render() {
     return (
       <div>
-      <input type="text" id="chatInputBox">
-        {/* <input type="text" id="chatInputField"/> */}
-        
-      </input>
+        <input type="text" id="chatInputBox" />
       </div>
     )
   }

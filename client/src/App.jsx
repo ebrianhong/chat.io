@@ -1,6 +1,7 @@
 import React from 'react';
 
-import ChatContainer from './components/chatbox/ChatContainer'
+import Nav from './components/nav/Nav';
+import Main from './components/main/Main';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,8 +10,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>APP</h1>
-        <ChatContainer></ChatContainer>
+        <Nav />
+        <Main />        
       </div>
     )
   }

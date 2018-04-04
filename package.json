@@ -4,7 +4,12 @@
   "description": "practice chat app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "buildEnv": "node bin/buildEnv",
+    "start:rest-server": "cd rest-server nodemon bin/entry.js",
+    "start:socket-server": "cd socket-server nodemon bin/entry.js",
+    "start:client-server": "cd client-server nodemon bin/entry.js",
+    "start": "npm-run-all -p start:rest-server start:socket-server start:client-server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/pkparadox/chat.io/issues"
   },
-  "homepage": "https://github.com/pkparadox/chat.io#readme"
+  "homepage": "https://github.com/pkparadox/chat.io#readme",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "lodash": "^4.17.5",
+    "npm-run-all": "^4.1.2"
+  }
 }
