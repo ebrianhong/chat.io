@@ -1,5 +1,4 @@
-const env = 'production'
+const env = 'development'
 const url = env === 'production' ? 'ipHere' : 'localhost'
 
-console.log(url)
 export default url
