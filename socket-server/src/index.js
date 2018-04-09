@@ -9,9 +9,16 @@ const io = SocketIo(server);
 
 const PORT = process.env.PORT || 4155;
 
-io.on('connection', client => {
-  client.removeAllListeners();
-  log('Client', client.id, 'connected to socket server');
+io.on('connection', socket => {
+  socket.removeAllListeners();
+  log('User', socket.id, 'has connected to socket server');
+
+  socket.on('client-server message', data => {
+    console.log(data)
+    console.log(data.message)
+    io.emit('server-client message', data)
+  })
+
 });
 
 server.listen(PORT, () => {

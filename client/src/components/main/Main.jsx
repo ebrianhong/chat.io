@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import ChatContainer from '../chatBox/ChatContainer'
+import { ChatContainer } from '../chatBox/ChatContainer'
 import Nav from '../nav/Nav'
 
 const Main = () => (

@@ -7,18 +7,22 @@ import ChatNav from './ChatNav';
 import ChatView from './Chatview';
 import ChatInterface from './ChatInterface';
 
-class ChatContainer extends React.Component {
+export const socket = io(`${url}:4155`);
+export class ChatContainer extends React.Component {
   constructor() {
     super()
-    console.log(url)
+    this.state = {
+    }
   }
 
   componentDidMount() {
-    const socket = io(`${url}:4155`);
     socket.on('connect', () => {
-      console.log('connected');
+      console.log('connected to socket server');
+
     });
   }
+
+
 
   render() {
     return (
@@ -31,4 +35,4 @@ class ChatContainer extends React.Component {
   }
 };
 
-export default ChatContainer;
+// export default ChatContainer;
