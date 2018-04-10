@@ -23,11 +23,7 @@ class ChatView extends React.Component {
 
   render() {
     return (
-      <div id="chatView">
-      {
-        
-        console.log(this.state.messages)
-      }
+      <div id="chatView">      
         {
           this.state.messages.map((message, i) => {
             return (
@@ -37,7 +33,6 @@ class ChatView extends React.Component {
                   <br/>
                   message: {message.message}
                 </div>
-
               </div>
             )
           })
