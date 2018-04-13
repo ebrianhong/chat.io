@@ -9,18 +9,18 @@ class ChatInputBox extends React.Component {
       user: 'default',
       message: '',
     }
-    this.sendChatHandler = this.sendChatHandler.bind(this)
-    this.onChangeHandler = this.onChangeHandler.bind(this)
+    // this.sendChatHandler = this.sendChatHandler.bind(this)
+    // this.onChangeHandler = this.onChangeHandler.bind(this)
   }
 
-  sendChatHandler(e) {
+  sendChatHandler = (e) => {
     e.preventDefault()
     socket.emit('client-server message', {
       user: this.state.user, message: this.state.message
     })
   }
 
-  onChangeHandler(e) {
+  onChangeHandler = (e) => {
     console.log(e.target.value)
     this.setState({
       message: e.target.value
@@ -31,7 +31,7 @@ class ChatInputBox extends React.Component {
     return (
       <div>
         <form onSubmit={this.sendChatHandler}>
-          <input onChange={this.onChangeHandler}type="text" id="chatInputBox" />
+          <input onChange={this.onChangeHandler} type="text" id="chatInputBox" />
         </form>
       </div>
     )
