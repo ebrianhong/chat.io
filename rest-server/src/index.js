@@ -1,15 +1,13 @@
-import express from 'express';
-import parser from 'body-parser';
-import cors from 'cors';
-import helmet from 'helmet';
-const app = express();
+import http from 'http';
 
-app.use(helmet());
-app.use(parser.json());
-app.use(parser.urlencoded({extended: true}));
-app.use(cors({
-  allowedHeaders: 'Content-Type, Authorization',
-  methods: ['GET, POST, PUT, DELETE', 'OPTIONS'],
-}));
+import App from './config/express';
+import { success } from './lib/log'
 
-app.use()
+export const app = App.express
+
+const server = http.createServer(app)
+
+
+server.listen(3396, () => {
+  success('Rest server listening on port: 3396');
+})

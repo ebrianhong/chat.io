@@ -10,7 +10,7 @@
     "start:rest-server": "cd rest-server && nodemon bin/entry.js",
     "start:socket-server": "cd socket-server && nodemon bin/entry.js",
     "start:client-server": "cd client-server && nodemon bin/entry.js",
-    "start": "npm-run-all -p start:socket-server start:client-server"
+    "start": "npm-run-all -p start:rest-server start:socket-server start:client-server"
   },
   "repository": {
     "type": "git",
