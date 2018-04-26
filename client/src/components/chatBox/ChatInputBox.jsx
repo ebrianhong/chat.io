@@ -13,14 +13,14 @@ class ChatInputBox extends React.Component {
     // this.onChangeHandler = this.onChangeHandler.bind(this)
   }
 
-  sendChatHandler = (e) => {
+  sendChatHandler = e => {
     e.preventDefault()
     socket.emit('client-server message', {
       user: this.state.user, message: this.state.message
     })
   }
 
-  onChangeHandler = (e) => {
+  onChangeHandler = e => {
     console.log(e.target.value)
     this.setState({
       message: e.target.value

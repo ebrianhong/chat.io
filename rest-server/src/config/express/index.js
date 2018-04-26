@@ -19,7 +19,7 @@ class App {
   constructor() {
     this.express = express();
     this.loadMiddlewares();
-    // this.loadRoutes();
+    this.loadRoutes();
   }
 
   loadMiddlewares() {
@@ -27,7 +27,7 @@ class App {
   }
 
   loadRoutes() {
-    this.express.use('/api', router)
+    // this.express.use('/api', router)
   }
 }
 
