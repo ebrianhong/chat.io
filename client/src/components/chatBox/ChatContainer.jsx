@@ -27,9 +27,9 @@ export class ChatContainer extends React.Component {
   render() {
     return (
       <div id="chatContainer">
+        <ChatInterface />
         <ChatNav />
         <ChatView />
-        <ChatInterface />
       </div>
     )
   }

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import { socket } from './ChatContainer';
 
@@ -11,9 +11,17 @@ class ChatView extends React.Component {
   }
 
   componentDidMount() {
+
     socket.on('server-client message', data => {
+      console.log('data', data)
       const messages = this.state.messages
-      messages.push(data)
+      if (Array.isArray(data)) {
+        data.forEach(message => {
+          messages.push(message)
+        })
+      } else {
+        messages.push(data)
+      }      
       this.setState({
         messages: messages
       })
@@ -27,7 +35,7 @@ class ChatView extends React.Component {
         {
           this.state.messages.map((message, i) => {
             return (
-              <div key={i}>
+              <div className="message" key={i}>
                 <div>
                   user: {message.user}
                   <br/>

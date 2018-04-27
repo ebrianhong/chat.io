@@ -8,7 +8,7 @@ class ChatInputButtons extends React.Component {
   render() {
     return (
       <div id="chatInputButtons">
-        <h5>ChatInputButtons</h5>
+        <h5>chat</h5>
       </div>
     )
   }

@@ -5,7 +5,7 @@ import { ChatContainer } from '../chatBox/ChatContainer'
 import Nav from '../nav/Nav'
 
 const Main = () => (
-  <div id="Main">
+  <div id="main">
     <Switch>
       <Route exact path='/' component={ChatContainer}/>
       <Route path='/chat' component={ChatContainer}/>

@@ -4,13 +4,13 @@ import { success, error } from '../../lib/log';
 mongoose.connect('mongodb://localhost/chat-io');
 
 const db = mongoose.connection;
-
+// db.dropDatabase()
 db.on('open', () => {
   success('Mongoose database connected');
 });
 
 const ChatSchema = mongoose.Schema({
-  username: String,
+  user: String,
   message: String,
 },
 {
@@ -19,13 +19,11 @@ const ChatSchema = mongoose.Schema({
 
 const Chat = mongoose.model('Chat', ChatSchema);
 
-export const storeChat = (username, message, cb) => {
+export const storeChat = (username, message) => {
   new Chat({
-    username: username,
+    user: username,
     message: message
-  }).save((data) => {
-    console.log('saved', data)
-  })
+  }).save()
 }
 
 export const getChat = async () => {

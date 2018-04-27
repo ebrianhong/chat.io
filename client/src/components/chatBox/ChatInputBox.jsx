@@ -18,6 +18,7 @@ class ChatInputBox extends React.Component {
     socket.emit('client-server message', {
       user: this.state.user, message: this.state.message
     })
+    e.target.reset()
   }
 
   onChangeHandler = e => {
@@ -29,9 +30,9 @@ class ChatInputBox extends React.Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.sendChatHandler}>
-          <input onChange={this.onChangeHandler} type="text" id="chatInputBox" />
+      <div id="chatInputBoxContainer">
+        <form class="form" onSubmit={this.sendChatHandler}>
+          <input onChange={this.onChangeHandler} type="text" id="chatInputBox" autoComplete="off"/>
         </form>
       </div>
     )

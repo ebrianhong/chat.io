@@ -9,7 +9,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div id="big">
         <Nav />
         <Main />        
       </div>
