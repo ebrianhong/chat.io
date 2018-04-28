@@ -6,7 +6,7 @@ class ChatInputBox extends React.Component {
   constructor(props) {
     super(props)
     this.state = {      
-      user: 'default',
+      user: '',
       message: '',
     }
     // this.sendChatHandler = this.sendChatHandler.bind(this)
@@ -22,17 +22,21 @@ class ChatInputBox extends React.Component {
   }
 
   onChangeHandler = e => {
+    console.log(e.target.id)
     console.log(e.target.value)
+
     this.setState({
-      message: e.target.value
+      [`${e.target.id}`]: e.target.value
     })
   }
 
   render() {
     return (
       <div id="chatInputBoxContainer">
-        <form class="form" onSubmit={this.sendChatHandler}>
-          <input onChange={this.onChangeHandler} type="text" id="chatInputBox" autoComplete="off"/>
+        <form className="form" onSubmit={this.sendChatHandler}>
+          <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="user" autoComplete="off"/>
+          <button id="submitButton" type="submit" />
+          <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="message" autoComplete="off"/>
         </form>
       </div>
     )
