@@ -7,7 +7,6 @@ class ChatNav extends React.Component {
   render() {
     return(
       <div id="chatNav">
-        <h5>ChatNav</h5>
       </div>
     )
   }

@@ -7,7 +7,6 @@ class Nav extends React.Component {
   render() {
     return (
       <div id="nav">
-        <h6>Nav</h6>
       </div>
     )
   }

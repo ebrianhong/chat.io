@@ -6,7 +6,7 @@ class ChatInputBox extends React.Component {
   constructor(props) {
     super(props)
     this.state = {      
-      user: '',
+      title: '',
       message: '',
     }
     // this.sendChatHandler = this.sendChatHandler.bind(this)
@@ -16,7 +16,7 @@ class ChatInputBox extends React.Component {
   sendChatHandler = e => {
     e.preventDefault()
     socket.emit('client-server message', {
-      user: this.state.user, message: this.state.message
+      title: this.state.title, message: this.state.message
     })
     e.target.reset()
   }
@@ -34,7 +34,7 @@ class ChatInputBox extends React.Component {
     return (
       <div id="chatInputBoxContainer">
         <form className="form" onSubmit={this.sendChatHandler}>
-          <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="user" autoComplete="off"/>
+          <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="title" autoComplete="off"/>
           <button id="submitButton" type="submit" />
           <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="message" autoComplete="off"/>
         </form>

@@ -31,9 +31,9 @@ io.on('connection', async socket => {
 
 
   socket.on('client-server message', async data => {
-    log(data.user, ':', data.message)
+    log(data.title, ':', data.message)
     try {
-      await storeChat(data.user, data.message)
+      await storeChat(data.title, data.message)
       io.emit('server-client message', data)    
     } catch(err) {
       error(err)

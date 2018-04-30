@@ -9,7 +9,6 @@ class ChatInterface extends React.Component {
   render() {
     return(
       <div id="chatInterface">
-        <ChatInputButtons />
         <ChatInputBox />
       </div>
     )

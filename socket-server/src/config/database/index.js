@@ -10,7 +10,7 @@ db.on('open', () => {
 });
 
 const ChatSchema = mongoose.Schema({
-  user: String,
+  title: String,
   message: String,
 },
 {
@@ -19,9 +19,9 @@ const ChatSchema = mongoose.Schema({
 
 const Chat = mongoose.model('Chat', ChatSchema);
 
-export const storeChat = (username, message) => {
+export const storeChat = (title, message) => {
   new Chat({
-    user: username,
+    title: title,
     message: message
   }).save()
 }
