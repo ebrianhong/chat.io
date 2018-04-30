@@ -19,6 +19,10 @@ class ChatInputBox extends React.Component {
       title: this.state.title, message: this.state.message
     })
     e.target.reset()
+    this.setState({
+      title: '',
+      message: ''
+    })
   }
 
   onChangeHandler = e => {
@@ -34,9 +38,25 @@ class ChatInputBox extends React.Component {
     return (
       <div id="chatInputBoxContainer">
         <form className="form" onSubmit={this.sendChatHandler}>
-          <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="title" autoComplete="off"/>
-          <button id="submitButton" type="submit" />
-          <input onChange={this.onChangeHandler} type="text" className="chatInputBox" id="message" autoComplete="off"/>
+          <input 
+            onChange={this.onChangeHandler} 
+            type="text" 
+            className="chatInputBox" 
+            id="title" 
+            autoComplete="off"
+            placeholder="Enter a title..."
+          />
+          <button 
+            id="submitButton" 
+            type="submit" />
+          <input 
+            onChange={this.onChangeHandler} 
+            type="text" 
+            className="chatInputBox" 
+            id="message" 
+            autoComplete="off"
+            placeholder="Enter a note..."
+          />
         </form>
       </div>
     )
