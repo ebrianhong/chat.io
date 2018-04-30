@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { socket } from './ChatContainer';
+import ChatMessage from './ChatMessage';
 
 class ChatView extends React.Component {
   constructor(props) {
@@ -32,7 +33,7 @@ class ChatView extends React.Component {
   render() {
     return (
       <div id="chatView">      
-        {
+        {/* {
           this.state.messages.map((message, i) => {
             return (
               <div className="message" key={i}>
@@ -43,6 +44,17 @@ class ChatView extends React.Component {
                   {message.message}
                 </div>
               </div>
+            )
+          })
+        } */}
+        {
+          this.state.messages.map((message, i) => {
+            return(
+              <ChatMessage 
+                key={i}
+                title={message.title}
+                message={message.message}
+              />
             )
           })
         }
