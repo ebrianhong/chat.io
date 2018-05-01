@@ -32,21 +32,7 @@ class ChatView extends React.Component {
 
   render() {
     return (
-      <div id="chatView">      
-        {/* {
-          this.state.messages.map((message, i) => {
-            return (
-              <div className="message" key={i}>
-                <div className="messageTitle">
-                  {message.title}
-                </div>
-                <div className="messageMessage">
-                  {message.message}
-                </div>
-              </div>
-            )
-          })
-        } */}
+      <div id="chatView">  
         {
           this.state.messages.map((message, i) => {
             return(

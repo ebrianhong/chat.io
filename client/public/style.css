@@ -117,8 +117,8 @@ chatInputBoxContainer {
 .form {
   height: 100%;
   display: grid;
-  min-width: 320px;
-  max-width: 80%;
+  min-width: 330px;
+  max-width: 60%;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
   grid-template-rows: 1fr 1fr;
@@ -126,9 +126,9 @@ chatInputBoxContainer {
 }
 .chatInputBox {  
   border: none; 
+  font-size: 14px;
   box-shadow: 1px 1px 3px  gray;
   padding: 10px;
-
 }
 
 #submitButton {
@@ -144,22 +144,66 @@ chatInputBoxContainer {
   
 }
 
-.message {
+.messageBox {
+  display: grid;
+  grid-template-rows: 24px 1fr 18px;
+  grid-gap: 8px;
   background-color: white;
   padding: 7px;
   box-shadow: 1px 1px 3px  gray;
-  overflow: hidden; 
-  text-overflow: ellipsis; 
-  white-space: normal;
 }
 
 .messageTitle {
   font-size: 20px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
 }
 
 .messageMessage {
-  font-size: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;  
+  grid-template-rows: 30px 1fr;
+  white-space: normal;
+  overflow: hidden;
+}
+/* .messageMessage-nowrap {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;  
+  grid-template-rows: 30px 1fr;
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
+}
+
+.messageMessage-wrap {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;  
+  grid-template-rows: 30px 1fr;
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nowrap;
+} */
+
+.messageButtonBox {
+  display: grid;
+  grid-template-columns: repeat(3, 50px);
+  grid-gap: 5px;
+}
+
+.messageButton {
+  background-color: white;
+  border: 0.5px solid gray;
+  visibility: hidden;
+  opacity: 0;
+  transition: 800ms, 800ms;
+  
+}
+
+.messageBox:hover .messageButton {
+  visibility: visible;
+  opacity: 1;
+  
 }
