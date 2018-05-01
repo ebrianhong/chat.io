@@ -165,8 +165,7 @@ chatInputBoxContainer {
 .messageMessage {
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;  
-  grid-template-rows: 30px 1fr;
-  white-space: normal;
+  word-wrap: break-word;
   overflow: hidden;
 }
 /* .messageMessage-nowrap {
