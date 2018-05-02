@@ -5,13 +5,29 @@ class ChatMessage extends React.Component {
     super(props)    
     console.log(this.props.message.length)
   }
+
+  onClickHandler = () => {
+    console.log('hey')
+    this.props.messageGrabber(
+      this.props.title,
+      this.props.message
+    )
+  }
+
+
+
   render() {
     return(
-      <div className="messageBox">
+      <div 
+        className="messageBox"           
+        onClick={this.onClickHandler}
+      >
         <div className="messageTitle">
           {this.props.title}
         </div>
-        <div className="messageMessage">
+        <div 
+          className="messageMessage"
+        >
           {this.props.message}
         </div>
 
