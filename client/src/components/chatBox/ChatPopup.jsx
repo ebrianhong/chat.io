@@ -16,13 +16,13 @@ class ChatPopup extends React.Component {
         >
         </div>
         <div id="popupBox">
-          <div className="messageTitle">
+          <div className="messageTitle popup">
             {this.props.popupTitle}
           </div>
-          <div className="messageMessage">                
+          <div className="messageMessage popup">                
             {this.props.popupMsg}
           </div>
-          <div className="messageButtonBox">
+          <div className="messageButtonBox popup">
             <button type="button" className="messageButton show">
               edit
             </button>
