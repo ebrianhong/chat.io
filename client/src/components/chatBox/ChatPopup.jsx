@@ -11,7 +11,9 @@ class ChatPopup extends React.Component {
   render() {
     return (
       <div>
-        <div id="popupOpacity">
+        <div id="popupOpacity"
+          onClick={this.props.closePopup}
+        >
         </div>
         <div id="popupBox">
           <div className="messageTitle">
