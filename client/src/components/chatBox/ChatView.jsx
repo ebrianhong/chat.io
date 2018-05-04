@@ -17,15 +17,15 @@ class ChatView extends React.Component {
 
   componentDidMount() {
     socket.on('server-client message', data => {
-      console.log('data', data)
-      const messages = this.state.messages
+      console.log('data', data)      
+      const messages = []
       if (Array.isArray(data)) {
         data.forEach(message => {
           messages.push(message)
         })
       } else {
         messages.push(data)
-      }      
+      }
       this.setState({
         messages: messages
       })
@@ -45,12 +45,17 @@ class ChatView extends React.Component {
     })
   }
 
-  messageGrabber = (title, message) => {
-    
+  messageGrabber = (title, message) => {    
     this.setState({
       popup: true,
       popupTitle: title,
       popupMsg: message,
+    })
+  }
+
+  onDeleteHandler = (id) => {
+    socket.emit('message delete', {
+      id
     })
   }
 
@@ -96,6 +101,8 @@ class ChatView extends React.Component {
                   title={message.title}
                   message={message.message}
                   messageGrabber={this.messageGrabber}
+                  onDeleteHandler={this.onDeleteHandler}
+                  id={message._id}
                 />
               )
             })

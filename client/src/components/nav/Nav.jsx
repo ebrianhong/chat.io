@@ -7,6 +7,9 @@ class Nav extends React.Component {
   render() {
     return (
       <div id="nav">
+        <h1>
+          Goggle Keepr
+        </h1>        
       </div>
     )
   }

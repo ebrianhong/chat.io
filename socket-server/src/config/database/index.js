@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { success, error } from '../../lib/log';
+import { success, log, error } from '../../lib/log';
 
 mongoose.connect('mongodb://localhost/chat-io');
 
@@ -33,5 +33,16 @@ export const getChat = async () => {
   } catch(err) {
     error(err)
   }
+}
 
+export const deleteMessage = async (id) => {
+  try {
+    log('deleted message: ', id)
+    await Chat.findByIdAndRemove({_id: id});
+    const data = await Chat.find();
+    log('data', data)
+    return data
+  } catch(err) {
+    error(err)
+  }
 }

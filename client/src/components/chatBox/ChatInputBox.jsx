@@ -17,7 +17,8 @@ class ChatInputBox extends React.Component {
     e.preventDefault()
     if (this.state.title.length && this.state.message.length) {
       socket.emit('client-server message', {
-        title: this.state.title, message: this.state.message
+        title: this.state.title, 
+        message: this.state.message
       })
       e.target.reset()
       this.setState({

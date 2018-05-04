@@ -5,7 +5,7 @@ import url from '../../config';
 
 import ChatNav from './ChatNav';
 import ChatView from './Chatview';
-import ChatInterface from './ChatInterface';
+import ChatInputBox from './ChatInputBox';
 
 export const socket = io(`${url}:4155`);
 export class ChatContainer extends React.Component {
@@ -27,7 +27,7 @@ export class ChatContainer extends React.Component {
   render() {
     return (
       <div id="chatContainer">
-        <ChatInterface />
+        <ChatInputBox />
         <ChatNav />
         <ChatView />
       </div>
