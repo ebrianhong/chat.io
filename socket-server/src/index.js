@@ -13,11 +13,8 @@ const PORT = process.env.PORT || 4155;
 
 io.on('connection', async socket => {
   try {
-    // await socket.removeAllListeners();    
     log('User', socket.id, 'has connected to socket server');
-    // get all the messages from the db
     const data = await getChat()
-    // emit the data to the socket that just connected
     await socket.emit('server-client message', data)
   } catch(err) {
     error(err)
@@ -26,10 +23,8 @@ io.on('connection', async socket => {
   socket.on('client-server message', async data => {
     log(data.title, ':', data.message)
     try {
-      // store message in the database
-      await storeChat(data.title, data.message)
-      // emit to everyone
-      io.emit('server-client message', data)    
+      const insertedData = await storeChat(data.title, data.message)
+      io.emit('server-client message', insertedData)
     } catch(err) {
       error(err)
     }
@@ -37,8 +32,8 @@ io.on('connection', async socket => {
 
   socket.on('message delete', async data => {
     try {
-      const newData = await deleteMessage(data.id)     
-      socket.emit('server-client message', newData)
+      const newData = await deleteMessage(data.id)
+      io.emit('server-client message', newData)
     } catch(err) {
       error(err)
     }

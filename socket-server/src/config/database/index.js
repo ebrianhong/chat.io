@@ -19,11 +19,18 @@ const ChatSchema = mongoose.Schema({
 
 const Chat = mongoose.model('Chat', ChatSchema);
 
-export const storeChat = (title, message) => {
-  new Chat({
-    title: title,
-    message: message
-  }).save()
+export const storeChat = async (title, message) => {
+  try {
+    await new Chat({
+      title: title,
+      message: message
+    }).save()
+    const lastMessage = await Chat.findOne().sort({ _id: -1 }).limit(1)
+    log('last message: ', lastMessage)
+    return lastMessage
+  } catch(err) {
+    error(err)
+  }
 }
 
 export const getChat = async () => {

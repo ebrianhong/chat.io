@@ -13,6 +13,7 @@ class ChatMessage extends React.Component {
     )
   }
   onClickDeleteHandler = () => {
+    console.log('id', this.props.id)
     this.props.onDeleteHandler(
       this.props.id
     )
@@ -26,8 +27,7 @@ class ChatMessage extends React.Component {
         </div>
         <div className="messageMessage" onClick={this.onClickMessageHandler}>
           {this.props.message}
-        </div>
-        
+        </div>        
         <div className="messageButtonBox">
           <button className="messageButton" type="button">edit</button>
           <button className="messageButton" type="button" onClick={this.onClickDeleteHandler}>delete</button>

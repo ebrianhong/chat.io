@@ -18,11 +18,9 @@ class ChatView extends React.Component {
   componentDidMount() {
     socket.on('server-client message', data => {
       console.log('data', data)      
-      const messages = []
+      let messages = this.state.messages
       if (Array.isArray(data)) {
-        data.forEach(message => {
-          messages.push(message)
-        })
+        messages = data
       } else {
         messages.push(data)
       }
@@ -59,26 +57,6 @@ class ChatView extends React.Component {
     })
   }
 
-  // escPress = () => {
-  //   document.onkeydown = function(evt) {
-  //     evt = evt || window.event;
-  //     if (evt.keyCode == 27) {
-  //       console.log('esc')
-  //       this.setState({
-  //         popup: false
-  //       })
-  //     }
-  //   };
-  // }
-  // document.onkeydown = function(evt) {
-  //   evt = evt || window.event;
-  //   if (evt.keyCode == 27) {
-  //     this.setState({
-  //       popup: false
-  //     })
-  //   }
-  // };
-
   render() {
     return (
       <div>
@@ -109,7 +87,6 @@ class ChatView extends React.Component {
           }
         </div>
       </div>
-      
     )
   }
 }

@@ -9,8 +9,6 @@ class ChatInputBox extends React.Component {
       title: '',
       message: '',
     }
-    // this.sendChatHandler = this.sendChatHandler.bind(this)
-    // this.onChangeHandler = this.onChangeHandler.bind(this)
   }
 
   sendChatHandler = e => {

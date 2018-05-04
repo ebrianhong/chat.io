@@ -18,12 +18,9 @@ export class ChatContainer extends React.Component {
   componentDidMount() {
     socket.on('connect', () => {
       console.log('connected to socket server');
-
     });
   }
-
-
-
+  
   render() {
     return (
       <div id="chatContainer">
